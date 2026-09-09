@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瀋陽 · 杭州 · 上海 8日旅行手冊</title>
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-sub: #4b5563;
+      --accent-color: #2563eb;
+      --border-color: #e5e7eb;
+      --tag-bg: #eff6ff;
+      --tag-text: #1d4ed8;
+      --map-bg: #f3f4f6;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #111827;
+        --card-bg: #1f2937;
+        --text-main: #f9fafb;
+        --text-sub: #9ca3af;
+        --accent-color: #3b82f6;
+        --border-color: #374151;
+        --tag-bg: #1e3a8a;
+        --tag-text: #93c5fd;
+        --map-bg: #1f2937;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 40px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 1. 倒計時卡片 */
+    .focus-card {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border: none;
+    }
+    .focus-card .label { opacity: 0.9; font-size: 0.85rem; }
+    .focus-card .event-title { font-size: 1.25rem; font-weight: 700; margin: 4px 0 12px 0; }
+    .countdown-timer {
+      display: flex;
+      gap: 8px;
+      text-align: center;
+    }
+    .timer-unit {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 6px 10px;
+      flex: 1;
+    }
+    .timer-num { font-size: 1.4rem; font-weight: 800; font-family: monospace; }
+    .timer-sub { font-size: 0.7rem; opacity: 0.8; }
+
+    /* 2. 地圖 SVG */
+    .map-svg { width: 100%; height: auto; display: block; border-radius: 8px; }
+
+    /* 3. 已確認憑證 */
+    .ticket-item {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .ticket-item:last-child { border-bottom: none; }
+    .ticket-header { display: flex; justify-content: space-between; font-weight: 600; }
+    .ticket-sub { font-size: 0.85rem; color: var(--text-sub); margin-top: 2px; }
+
+    /* 4. 逐日行程 */
+    .day-block { margin-bottom: 16px; }
+    .day-header {
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .timeline-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .timeline-time {
+      width: 50px;
+      font-weight: 600;
+      color: var(--text-sub);
+      flex-shrink: 0;
+    }
+    .timeline-content { flex: 1; }
+    .location-link {
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-color);
+      font-weight: 500;
+    }
+    .booking-tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.75rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      font-weight: bold;
+    }
+
+    /* 折疊按鈕 */
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--accent-color);
+      user-select: none;
+      padding: 4px 0;
+    }
+
+    /* 5. 待辦清單 */
+    .todo-list { list-style-type: square; padding-left: 20px; font-size: 0.9rem; color: var(--text-sub); }
+    .todo-list li { margin-bottom: 6px; }
+
+    /* 6. 貼士 */
+    .tip-box { font-size: 0.85rem; color: var(--text-sub); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 1. 頂部此刻關注卡片 -->
+  <div class="card focus-card">
+    <div class="label">下一個行程事件</div>
+    <div class="event-title" id="next-event">✈️ 酷航 TR156 登機（新加坡 $\rightarrow$ 瀋陽）</div>
+    <div class="countdown-timer">
+      <div class="timer-unit"><div class="timer-num" id="d">00</div><div class="timer-sub">天</div></div>
+      <div class="timer-unit"><div class="timer-num" id="h">00</div><div class="timer-sub">時</div></div>
+      <div class="timer-unit"><div class="timer-num" id="m">00</div><div class="timer-sub">分</div></div>
+      <div class="timer-unit"><div class="timer-num" id="s">00</div><div class="timer-sub">秒</div></div>
+    </div>
+  </div>
+
+  <!-- 2. 行程總覽地圖 (SVG) -->
+  <div class="card">
+    <div class="section-title">🗺️ 行程總覽路線畫卷</div>
+    <svg class="map-svg" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="transparent"/>
+      <!-- 手繪虛線連接 -->
+      <path d="M 50 130 C 100 40, 180 30, 240 120 C 270 140, 310 130, 340 90" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="6,6"/>
+      
+      <!-- 瀋陽 -->
+      <g transform="translate(60, 50)">
+        <circle cx="0" cy="0" r="16" fill="#ef4444"/>
+        <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">瀋陽</text>
+        <text x="0" y="28" text-anchor="middle" fill="currentColor" font-size="9">住: 東大學術中心 (3晚)</text>
+      </g>
+
+      <!-- 杭州 -->
+      <g transform="translate(230, 130)">
+        <circle cx="0" cy="0" r="16" fill="#10b981"/>
+        <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">杭州</text>
+        <text x="0" y="28" text-anchor="middle" fill="currentColor" font-size="9">住: 康萊德酒店 (2晚)</text>
+      </g>
+
+      <!-- 上海 -->
+      <g transform="translate(340, 80)">
+        <circle cx="0" cy="0" r="16" fill="#3b82f6"/>
+        <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">上海</text>
+        <text x="0" y="28" text-anchor="middle" fill="currentColor" font-size="9">住: 麗思卡爾頓 / 康萊德</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 3. 已確認憑證 -->
+  <div class="card">
+    <div class="section-title">🎫 已確認機票與住宿</div>
+    <div class="ticket-item">
+      <div class="ticket-header"><span>✈️ 酷航 TR156</span><span>10/04 02:45 - 09:40</span></div>
+      <div class="ticket-sub">新加坡樟宜 T1 $\rightarrow$ 瀋陽桃仙 T3</div>
+    </div>
+    <div class="ticket-item">
+      <div class="ticket-header"><span>🏨 瀋陽東北大學國際學術交流中心</span><span>10/04 - 10/07 (3晚)</span></div>
+      <div class="ticket-sub">瀋陽市和平區文體西路80號</div>
+    </div>
+    <div class="ticket-item">
+      <div class="ticket-header"><span>✈️ 東航 MU6134</span><span>10/07 11:05 - 13:35</span></div>
+      <div class="ticket-sub">瀋陽桃仙 T3 $\rightarrow$ 杭州蕭山 T3</div>
+    </div>
+    <div class="ticket-item">
+      <div class="ticket-header"><span>🏨 杭州康萊德酒店</span><span>10/07 - 10/09 (2晚)</span></div>
+      <div class="ticket-sub">杭州市江幹區新業路228號來福士中心T2棟</div>
+    </div>
+    <div class="ticket-item">
+      <div class="ticket-header"><span>🏨 上海波特曼麗思卡爾頓酒店</span><span>10/09 - 10/10 (1晚)</span></div>
+      <div class="ticket-sub">上海市靜安區南京西路1376號上海商城</div>
+    </div>
+    <div class="ticket-item">
+      <div class="ticket-header"><span>🏨 上海康萊德酒店</span><span>10/10 - 10/11 (1晚)</span></div>
+      <div class="ticket-sub">上海市黃浦區南京東路789號</div>
+    </div>
+    <div class="ticket-item">
+      <div class="ticket-header"><span>✈️ 新航 SQ835</span><span>10/11 19:10 - 00:35+1</span></div>
+      <div class="ticket-sub">上海浦東 T2 $\rightarrow$ 新加坡樟宜</div>
+    </div>
+  </div>
+
+  <!-- 4. 逐日行程 -->
+  <div class="card">
+    <div class="section-title">📅 逐日行程安排</div>
+    
+    <!-- Day 1 -->
+    <div class="day-block">
+      <div class="day-header">Day 1: 10/04 (日) 抵達瀋陽</div>
+      <div class="timeline-row"><div class="timeline-time">09:40</div><div class="timeline-content">抵達 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=瀋陽桃仙國際機場" target="_blank">瀋陽桃仙國際機場</a></div></div>
+      <div class="timeline-row"><div class="timeline-time">11:30</div><div class="timeline-content">入住/寄存行李：<a class="location-link" href="https://www.google.com/maps/search/?api=1&query=瀋陽東北大學國際學術交流中心" target="_blank">東北大學學術交流中心</a></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div class="timeline-content">遊覽 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=瀋陽故宮" target="_blank">瀋陽故宮</a> <span class="booking-tag">需提前預約</span></div></div>
+      <div class="timeline-row"><div class="timeline-time">18:00</div><div class="timeline-content">逛 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=瀋陽中街" target="_blank">中街</a>，享用東北老字號泥爐烤肉</div></div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-block">
+      <div class="day-header">Day 2: 10/05 (一) 瀋陽漫遊（注意博物館閉館）</div>
+      <div class="timeline-row"><div class="timeline-time">09:30</div><div class="timeline-content">遊覽 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=清昭陵+北陵公園" target="_blank">北陵公園 (清昭陵)</a>（室外皇家陵寢）</div></div>
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div class="timeline-content">體驗東北特色洗浴文化（如清河半島或泡泡森林）</div></div>
+      <div class="timeline-row"><div class="timeline-time">18:30</div><div class="timeline-content"><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=塔灣興順夜市" target="_blank">塔灣興順夜市</a> 打卡地道小吃</div></div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-block">
+      <div class="day-header">Day 3: 10/06 (二) 瀋陽歷史巡禮</div>
+      <div class="timeline-row"><div class="timeline-time">09:00</div><div class="timeline-content"><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=張學良舊居" target="_blank">張學良舊居（少帥府）</a> <span class="booking-tag">需提前預約</span></div></div>
+      <div class="timeline-row"><div class="timeline-time">13:30</div><div class="timeline-content"><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=遼寧省博物館" target="_blank">遼寧省博物館</a> <span class="booking-tag">免費需預約</span></div></div>
+      <div class="timeline-row"><div class="timeline-time">18:30</div><div class="timeline-content"><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=西塔韓國街" target="_blank">西塔韓國街</a> 享用韓式烤肉與醬蟹</div></div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-block">
+      <div class="day-header">Day 4: 10/07 (三) 飛往杭州 · 西湖夜景</div>
+      <div class="timeline-row"><div class="timeline-time">11:05</div><div class="timeline-content">搭乘 MU6134 飛往杭州蕭山機場</div></div>
+      <div class="timeline-row"><div class="timeline-time">15:00</div><div class="timeline-content">入住 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=杭州康萊德酒店" target="_blank">杭州康萊德酒店</a></div></div>
+      <div class="timeline-row"><div class="timeline-time">17:30</div><div class="timeline-content">漫步 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=西湖+湖濱晴雨" target="_blank">西湖湖畔</a>，欣賞西湖夜景</div></div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-block">
+      <div class="day-header">Day 5: 10/08 (四) 杭州禪意與靈隱</div>
+      <div class="timeline-row"><div class="timeline-time">08:30</div><div class="timeline-content">遊覽 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=靈隱寺" target="_blank">靈隱寺 / 飛來峰</a> <span class="booking-tag">需提前預購門票</span></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div class="timeline-content"><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=龍井村" target="_blank">龍井村</a> 品茶，漫步綠茶園</div></div>
+      <div class="timeline-row"><div class="timeline-time">18:00</div><div class="timeline-content"><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=小河直街" target="_blank">小河直街歷史街區</a> 體驗江南運河夜景</div></div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-block">
+      <div class="day-header">Day 6: 10/09 (五) 杭州 $\rightarrow$ 上海靜安</div>
+      <div class="timeline-row"><div class="timeline-time">11:00</div><div class="timeline-content">搭乘高鐵赴上海（約 1 小時）</div></div>
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div class="timeline-content">入住 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=上海波特曼麗思卡爾頓酒店" target="_blank">波特曼麗思卡爾頓酒店</a></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:00</div><div class="timeline-content">逛靜安寺與 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=安福路" target="_blank">安福路 / 武康路</a> 梧桐區</div></div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-block">
+      <div class="day-header">Day 7: 10/10 (六) 上海外灘與換酒店</div>
+      <div class="timeline-row"><div class="timeline-time">12:00</div><div class="timeline-content">辦理退房，轉存行李至 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=上海康萊德酒店" target="_blank">上海康萊德酒店</a></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div class="timeline-content">逛 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=陸家嘴三件套" target="_blank">陸家嘴</a> 與陸家嘴綠地</div></div>
+      <div class="timeline-row"><div class="timeline-time">19:00</div><div class="timeline-content"><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=外灘" target="_blank">外灘天際線夜景</a> 與南京東路步行街</div></div>
+    </div>
+
+    <!-- Day 8 -->
+    <div class="day-block">
+      <div class="day-header">Day 8: 10/11 (日) 上海藝術與返程</div>
+      <div class="timeline-row"><div class="timeline-time">10:00</div><div class="timeline-content">遊覽 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=豫園" target="_blank">豫園</a> 或 <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=西岸美術館" target="_blank">上海西岸美術館</a></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:00</div><div class="timeline-content">前往上海浦東國際機場 T2</div></div>
+      <div class="timeline-row"><div class="timeline-time">19:10</div><div class="timeline-content">搭乘新航 SQ835 飛返新加坡</div></div>
+    </div>
+  </div>
+
+  <!-- 5. 待辦清單 -->
+  <div class="card">
+    <div class="section-title">📝 行前待辦清單</div>
+    <ul class="todo-list">
+      <li>預訂 10/09 杭州東 $\rightarrow$ 上海虹橋/上海站 高鐵車票（出發前 14 天開放售票）</li>
+      <li>提前預約瀋陽故宮與少帥府門票（微信小程式）</li>
+      <li>提前預約遼寧省博物館免費門票</li>
+      <li>提前購買杭州靈隱寺/飛來峰景區門票</li>
+      <li>開通中國境內行動支付（微信支付 / 支付寶綁定外卡）</li>
+    </ul>
+  </div>
+
+  <!-- 6. 實用貼士 -->
+  <div class="card">
+    <div class="section-title">💡 實用貼士</div>
+    <div class="tip-box">
+      <p>• <strong>時區提醒：</strong> 全程均處於中國標準時間（UTC+8），與新加坡無時差。</p>
+      <p>• <strong>週一閉館：</strong> 10/05（週一）瀋陽各大博物館均閉館，行程已為你避開室內館藏，安排為公園與洗浴體驗。</p>
+      <p>• <strong>上海換飯店：</strong> 10/10 靜安區換至南京東路，搭乘地鐵 2 號線約 15 分鐘即可抵達，建議中午退房直接先去寄行李。</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // 行程倒計時邏輯 (UTC+8)
+  const targetDate = new Date("2026-10-04T02:45:00+08:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("next-event").innerText = "行程進行中 / 已完成！";
+      document.getElementById("d").innerText = "00";
+      document.getElementById("h").innerText = "00";
+      document.getElementById("m").innerText = "00";
+      document.getElementById("s").innerText = "00";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("d").innerText = String(days).padStart(2, '0');
+    document.getElementById("h").innerText = String(hours).padStart(2, '0');
+    document.getElementById("m").innerText = String(minutes).padStart(2, '0');
+    document.getElementById("s").innerText = String(seconds).padStart(2, '0');
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
+</body>
+</html>
