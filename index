@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;瀋陽 · 杭州 · 上海 8日旅行手冊&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg-color: #f8f9fa;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--card-bg: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text-main: #1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text-sub: #4b5563;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent-color: #2563eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--border-color: #e5e7eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--tag-bg: #eff6ff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--tag-text: #1d4ed8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--map-bg: #f3f4f6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (prefers-color-scheme: dark) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--bg-color: #111827;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--card-bg: #1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--text-main: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--text-sub: #9ca3af;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--accent-color: #3b82f6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--border-color: #374151;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--tag-bg: #1e3a8a;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--tag-text: #93c5fd;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--map-bg: #1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--bg-color);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-bottom: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 640px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 8px rgba(0,0,0,0.04);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.15rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* 1. 倒計時卡片 */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.focus-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #2563eb, #1d4ed8);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.focus-card .label { opacity: 0.9; font-size: 0.85rem; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.focus-card .event-title { font-size: 1.25rem; font-weight: 700; margin: 4px 0 12px 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.countdown-timer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timer-unit {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 6px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timer-num { font-size: 1.4rem; font-weight: 800; font-family: monospace; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timer-sub { font-size: 0.7rem; opacity: 0.8; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* 2. 地圖 SVG */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.map-svg { width: 100%; height: auto; display: block; border-radius: 8px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* 3. 已確認憑證 */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.ticket-item {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px dashed var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.ticket-item:last-child { border-bottom: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.ticket-header { display: flex; justify-content: space-between; font-weight: 600; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.ticket-sub { font-size: 0.85rem; color: var(--text-sub); margin-top: 2px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* 4. 逐日行程 */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.day-block { margin-bottom: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.day-header {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent-color);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline-row {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline-time {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-sub);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline-content { flex: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.location-link {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px dotted var(--accent-color);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.booking-tag {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fef3c7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #92400e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 1px 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-left: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* 折疊按鈕 */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>details summary {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent-color);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 4px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* 5. 待辦清單 */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.todo-list { list-style-type: square; padding-left: 20px; font-size: 0.9rem; color: var(--text-sub); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.todo-list li { margin-bottom: 6px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* 6. 貼士 */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tip-box { font-size: 0.85rem; color: var(--text-sub); line-height: 1.6; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 1. 頂部此刻關注卡片 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card focus-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="label"&gt;下一個行程事件&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="event-title" id="next-event"&gt;✈️ 酷航 TR156 登機（新加坡 $\rightarrow$ 瀋陽）&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="countdown-timer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timer-unit"&gt;&lt;div class="timer-num" id="d"&gt;00&lt;/div&gt;&lt;div class="timer-sub"&gt;天&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timer-unit"&gt;&lt;div class="timer-num" id="h"&gt;00&lt;/div&gt;&lt;div class="timer-sub"&gt;時&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timer-unit"&gt;&lt;div class="timer-num" id="m"&gt;00&lt;/div&gt;&lt;div class="timer-sub"&gt;分&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timer-unit"&gt;&lt;div class="timer-num" id="s"&gt;00&lt;/div&gt;&lt;div class="timer-sub"&gt;秒&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 2. 行程總覽地圖 (SVG) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;🗺️ 行程總覽路線畫卷&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;svg class="map-svg" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;rect width="100%" height="100%" fill="transparent"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 手繪虛線連接 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;path d="M 50 130 C 100 40, 180 30, 240 120 C 270 140, 310 130, 340 90" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="6,6"/&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 瀋陽 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;g transform="translate(60, 50)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="0" cy="0" r="16" fill="#ef4444"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="0" y="5" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold"&gt;瀋陽&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="0" y="28" text-anchor="middle" fill="currentColor" font-size="9"&gt;住: 東大學術中心 (3晚)&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/g&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 杭州 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;g transform="translate(230, 130)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="0" cy="0" r="16" fill="#10b981"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="0" y="5" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold"&gt;杭州&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="0" y="28" text-anchor="middle" fill="currentColor" font-size="9"&gt;住: 康萊德酒店 (2晚)&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/g&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- 上海 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;g transform="translate(340, 80)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="0" cy="0" r="16" fill="#3b82f6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="0" y="5" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold"&gt;上海&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="0" y="28" text-anchor="middle" fill="currentColor" font-size="9"&gt;住: 麗思卡爾頓 / 康萊德&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 3. 已確認憑證 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;🎫 已確認機票與住宿&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ticket-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-header"&gt;&lt;span&gt;✈️ 酷航 TR156&lt;/span&gt;&lt;span&gt;10/04 02:45 - 09:40&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-sub"&gt;新加坡樟宜 T1 $\rightarrow$ 瀋陽桃仙 T3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ticket-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-header"&gt;&lt;span&gt;🏨 瀋陽東北大學國際學術交流中心&lt;/span&gt;&lt;span&gt;10/04 - 10/07 (3晚)&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-sub"&gt;瀋陽市和平區文體西路80號&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ticket-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-header"&gt;&lt;span&gt;✈️ 東航 MU6134&lt;/span&gt;&lt;span&gt;10/07 11:05 - 13:35&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-sub"&gt;瀋陽桃仙 T3 $\rightarrow$ 杭州蕭山 T3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ticket-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-header"&gt;&lt;span&gt;🏨 杭州康萊德酒店&lt;/span&gt;&lt;span&gt;10/07 - 10/09 (2晚)&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-sub"&gt;杭州市江幹區新業路228號來福士中心T2棟&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ticket-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-header"&gt;&lt;span&gt;🏨 上海波特曼麗思卡爾頓酒店&lt;/span&gt;&lt;span&gt;10/09 - 10/10 (1晚)&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-sub"&gt;上海市靜安區南京西路1376號上海商城&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ticket-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-header"&gt;&lt;span&gt;🏨 上海康萊德酒店&lt;/span&gt;&lt;span&gt;10/10 - 10/11 (1晚)&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-sub"&gt;上海市黃浦區南京東路789號&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ticket-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-header"&gt;&lt;span&gt;✈️ 新航 SQ835&lt;/span&gt;&lt;span&gt;10/11 19:10 - 00:35+1&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ticket-sub"&gt;上海浦東 T2 $\rightarrow$ 新加坡樟宜&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 4. 逐日行程 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;📅 逐日行程安排&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 1: 10/04 (日) 抵達瀋陽&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;09:40&lt;/div&gt;&lt;div class="timeline-content"&gt;抵達 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=瀋陽桃仙國際機場" target="_blank"&gt;瀋陽桃仙國際機場&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;11:30&lt;/div&gt;&lt;div class="timeline-content"&gt;入住/寄存行李：&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=瀋陽東北大學國際學術交流中心" target="_blank"&gt;東北大學學術交流中心&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;14:00&lt;/div&gt;&lt;div class="timeline-content"&gt;遊覽 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=瀋陽故宮" target="_blank"&gt;瀋陽故宮&lt;/a&gt; &lt;span class="booking-tag"&gt;需提前預約&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;18:00&lt;/div&gt;&lt;div class="timeline-content"&gt;逛 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=瀋陽中街" target="_blank"&gt;中街&lt;/a&gt;，享用東北老字號泥爐烤肉&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 2: 10/05 (一) 瀋陽漫遊（注意博物館閉館）&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;09:30&lt;/div&gt;&lt;div class="timeline-content"&gt;遊覽 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=清昭陵+北陵公園" target="_blank"&gt;北陵公園 (清昭陵)&lt;/a&gt;（室外皇家陵寢）&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;14:00&lt;/div&gt;&lt;div class="timeline-content"&gt;體驗東北特色洗浴文化（如清河半島或泡泡森林）&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;18:30&lt;/div&gt;&lt;div class="timeline-content"&gt;&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=塔灣興順夜市" target="_blank"&gt;塔灣興順夜市&lt;/a&gt; 打卡地道小吃&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 3: 10/06 (二) 瀋陽歷史巡禮&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;09:00&lt;/div&gt;&lt;div class="timeline-content"&gt;&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=張學良舊居" target="_blank"&gt;張學良舊居（少帥府）&lt;/a&gt; &lt;span class="booking-tag"&gt;需提前預約&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;13:30&lt;/div&gt;&lt;div class="timeline-content"&gt;&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=遼寧省博物館" target="_blank"&gt;遼寧省博物館&lt;/a&gt; &lt;span class="booking-tag"&gt;免費需預約&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;18:30&lt;/div&gt;&lt;div class="timeline-content"&gt;&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=西塔韓國街" target="_blank"&gt;西塔韓國街&lt;/a&gt; 享用韓式烤肉與醬蟹&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 4: 10/07 (三) 飛往杭州 · 西湖夜景&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;11:05&lt;/div&gt;&lt;div class="timeline-content"&gt;搭乘 MU6134 飛往杭州蕭山機場&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;15:00&lt;/div&gt;&lt;div class="timeline-content"&gt;入住 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=杭州康萊德酒店" target="_blank"&gt;杭州康萊德酒店&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;17:30&lt;/div&gt;&lt;div class="timeline-content"&gt;漫步 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=西湖+湖濱晴雨" target="_blank"&gt;西湖湖畔&lt;/a&gt;，欣賞西湖夜景&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 5 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 5: 10/08 (四) 杭州禪意與靈隱&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;08:30&lt;/div&gt;&lt;div class="timeline-content"&gt;遊覽 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=靈隱寺" target="_blank"&gt;靈隱寺 / 飛來峰&lt;/a&gt; &lt;span class="booking-tag"&gt;需提前預購門票&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;14:00&lt;/div&gt;&lt;div class="timeline-content"&gt;&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=龍井村" target="_blank"&gt;龍井村&lt;/a&gt; 品茶，漫步綠茶園&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;18:00&lt;/div&gt;&lt;div class="timeline-content"&gt;&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=小河直街" target="_blank"&gt;小河直街歷史街區&lt;/a&gt; 體驗江南運河夜景&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 6 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 6: 10/09 (五) 杭州 $\rightarrow$ 上海靜安&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;11:00&lt;/div&gt;&lt;div class="timeline-content"&gt;搭乘高鐵赴上海（約 1 小時）&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;14:00&lt;/div&gt;&lt;div class="timeline-content"&gt;入住 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=上海波特曼麗思卡爾頓酒店" target="_blank"&gt;波特曼麗思卡爾頓酒店&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;16:00&lt;/div&gt;&lt;div class="timeline-content"&gt;逛靜安寺與 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=安福路" target="_blank"&gt;安福路 / 武康路&lt;/a&gt; 梧桐區&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 7 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 7: 10/10 (六) 上海外灘與換酒店&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;12:00&lt;/div&gt;&lt;div class="timeline-content"&gt;辦理退房，轉存行李至 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=上海康萊德酒店" target="_blank"&gt;上海康萊德酒店&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;14:00&lt;/div&gt;&lt;div class="timeline-content"&gt;逛 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=陸家嘴三件套" target="_blank"&gt;陸家嘴&lt;/a&gt; 與陸家嘴綠地&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;19:00&lt;/div&gt;&lt;div class="timeline-content"&gt;&lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=外灘" target="_blank"&gt;外灘天際線夜景&lt;/a&gt; 與南京東路步行街&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Day 8 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="day-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-header"&gt;Day 8: 10/11 (日) 上海藝術與返程&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;10:00&lt;/div&gt;&lt;div class="timeline-content"&gt;遊覽 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=豫園" target="_blank"&gt;豫園&lt;/a&gt; 或 &lt;a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=西岸美術館" target="_blank"&gt;上海西岸美術館&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;15:00&lt;/div&gt;&lt;div class="timeline-content"&gt;前往上海浦東國際機場 T2&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-row"&gt;&lt;div class="timeline-time"&gt;19:10&lt;/div&gt;&lt;div class="timeline-content"&gt;搭乘新航 SQ835 飛返新加坡&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 5. 待辦清單 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;📝 行前待辦清單&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul class="todo-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;預訂 10/09 杭州東 $\rightarrow$ 上海虹橋/上海站 高鐵車票（出發前 14 天開放售票）&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;提前預約瀋陽故宮與少帥府門票（微信小程式）&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;提前預約遼寧省博物館免費門票&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;提前購買杭州靈隱寺/飛來峰景區門票&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;開通中國境內行動支付（微信支付 / 支付寶綁定外卡）&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 6. 實用貼士 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;💡 實用貼士&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tip-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;• &lt;strong&gt;時區提醒：&lt;/strong&gt; 全程均處於中國標準時間（UTC+8），與新加坡無時差。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;• &lt;strong&gt;週一閉館：&lt;/strong&gt; 10/05（週一）瀋陽各大博物館均閉館，行程已為你避開室內館藏，安排為公園與洗浴體驗。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;• &lt;strong&gt;上海換飯店：&lt;/strong&gt; 10/10 靜安區換至南京東路，搭乘地鐵 2 號線約 15 分鐘即可抵達，建議中午退房直接先去寄行李。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 行程倒計時邏輯 (UTC+8)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const targetDate = new Date("2026-10-04T02:45:00+08:00").getTime();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function updateCountdown() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const now = new Date().getTime();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const diff = targetDate - now;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (diff &lt;= 0) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("next-event").innerText = "行程進行中 / 已完成！";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("d").innerText = "00";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("h").innerText = "00";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("m").innerText = "00";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("s").innerText = "00";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const days = Math.floor(diff / (1000 * 60 * 60 * 24));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const seconds = Math.floor((diff % (1000 * 60)) / 1000);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("d").innerText = String(days).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("h").innerText = String(hours).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("m").innerText = String(minutes).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("s").innerText = String(seconds).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>setInterval(updateCountdown, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateCountdown();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
